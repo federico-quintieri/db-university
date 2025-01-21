@@ -1,3 +1,5 @@
+// Query giorno 20/01/2025
+
 -- 1. Selezionare tutti gli studenti nati nel 1990 (160)
 SELECT *
 FROM students
@@ -72,3 +74,26 @@ DELETE FROM students WHERE id =5001;
 Poi vabbe per ogni query di modifica ho fatto un select per controllare il risultato
 Il punto 10 non penso sia corretto farlo in questo modo, mesa che si fa come nel punto 11
 Non credo che sia una grande idea disabilitare e riabilitare la safe_updates
+
+
+// Query giorno 21/01/2025
+
+-- 1 Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+SELECT DISTINCT students.*
+FROM students
+INNER JOIN degrees ON students.degree_id = degrees.id
+LIKE degrees.name = '%Economia%';
+
+Ho usato il DISTINCT perche lo studente stava iscritto a più corsi e me lo duplicava
+
+-- 2 Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
+
+-- 3 Selezionare tutti i corsi in cui insegna Fulvio Amato (id = 44)
+
+-- 4 Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
+
+-- 5 Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+
+-- 6 Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
+
+-- 7 BONUS: Selezionare per ogni studente quanti tentativi d'esame ha sostenuto per superare ciascuno dei suoi esami
